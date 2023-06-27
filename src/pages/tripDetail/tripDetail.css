@@ -1,0 +1,77 @@
+
+.published-by{
+    display: flex;
+}
+.published-by img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border-color: 2px solid rgb(187,151,93) ;
+    margin-right: 15px;
+}
+
+.tripCreated{
+    margin-top: -10px;
+}
+
+.bookButton{
+    background-color: #BB975D;
+    border: none;
+    color:white;
+    padding: 15px 15px;
+    font-weight: 300;
+    text-decoration: none;
+    
+}
+.bookButton:hover{
+    color:rgb(28,69,81)
+}
+
+
+.image {
+    margin-top: 10px;
+  }
+  .image img {
+    width: 100%;
+    height: 60vh;
+  }
+  
+  .status {
+    display: flex;
+    justify-content: end;
+  }
+  
+  .status h3{
+      background-color: rgb(187,151,93);
+      margin-top: 10px;
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+  
+  }
+  
+  .description{
+    
+      font-size: x-large;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+  }
+  .description p img{
+    width: 600px;
+    height: 300px;
+   
+  }
+
+@media (max-width: 900px){
+    .description p img{
+        width: 400px;
+        height: 200px;
+       
+      }
+}
+  

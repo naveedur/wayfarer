@@ -1,0 +1,82 @@
+.addNew a {
+    background-color: rgb(187,151,93);
+    padding: 10px;
+    color: white;
+    text-decoration: none; 
+}
+.trip img{
+    width: 100%;
+    height: 170px;
+}
+.publisher{
+    display: flex;
+}
+.publisher img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border-color: 2px solid rgb(187,151,93) ;
+    
+}
+.startDate{
+    margin-right: 15px;
+}
+
+
+.editButton{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.editButton .Buttons{
+    margin: 20px 0;
+
+}
+.editButton a {
+    background-color: rgb(187,151,93);
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+ }
+.editButton .active {
+    background-color: rgb(28,69,81);
+    color: white;
+    padding: 5px 13px;
+}
+
+
+    /* new trip css */
+
+
+    
+.tripForm{
+    width:100%;
+   
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+.formButton{
+    background-color: rgb(187,151,93);
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none; 
+    border:none;
+    margin-bottom: 20px;
+}
+
+
+
+@media (max-width: 900px){
+     .detail{
+        margin-top: 30px;
+     }
+     .editButton{
+        flex-direction: row;
+        justify-content:  space-around;
+    }
+     
+}

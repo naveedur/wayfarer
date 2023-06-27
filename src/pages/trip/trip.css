@@ -1,0 +1,59 @@
+.tripsMain{
+  position: relative;
+}
+
+.tripTop{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tripBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.searchField{
+  justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding: 0;
+border-radius: 20px;
+    border: 4px solid rgb(28,69,81);
+}
+.searchField input{
+  width: 99%;
+padding: 8px 8px;
+  border: none;
+  font-size: larger;
+  background: none;
+}
+.searchField input:focus{
+  outline: none;
+}
+
+.tripLeftLine{
+  position: absolute;
+  width: 40px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  
+  background-color: rgb(28,69,81);
+}
+.tripRightLine{
+  position: absolute;
+  width: 40px;
+  top: 0;
+  Right: 0;
+  height: 100%;
+  
+  background-color: rgb(28,69,81);
+}
+
+@media (max-width: 900px) {
+  .tripRightLine, .tripLeftLine {
+    display: none;
+  }
+}

@@ -1,0 +1,96 @@
+.slider {
+    height: 60vh;
+    background-image:url("https://images.unsplash.com/photo-1614591276564-7b3e69347a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=874&q=80");
+    width: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    
+    position: relative;
+    /* height: "100%", */
+    
+    
+}
+.sliderImage{
+    width: 100%;
+    height: 100%; 
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+
+    
+    transition: all 0.9s ease-in-out;
+}
+
+  .slide-in-left {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide-in-right {
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+  }
+.leftArrow{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform:translate(0, -50%);
+    font-size: 45px;
+    color: #A458A2;
+    z-index: 1;
+    cursor: pointer;
+
+}
+.rightArrow{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform:translate(0, -50%);
+
+    font-size: 45px;
+    color: #A458A2;
+    z-index: 1;
+    cursor: pointer;
+
+}
+
+.sliderBox{
+  width:50%;
+  height:50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(28,69,81,0.8);
+  color:white;
+
+
+}
+.sliderBox button{
+    background-color: #A458A2;
+    border: none;
+    color:white;
+    padding: 15px 15px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+
+@media (max-width: 900px){
+  .sliderBox{
+    padding: 20px;
+    width:60%;
+  height:60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
+  .sliderBox h2{
+    text-align: center;
+  }
+}

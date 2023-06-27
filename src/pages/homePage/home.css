@@ -1,0 +1,66 @@
+.posts{
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.posts .row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    
+}
+.destinationHeading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+
+    font-size: xx-large;
+}
+.postData{
+    margin: 10px 0;
+}
+.postData a{
+    text-decoration: none;
+    color: black;
+}
+.moreButton{
+    text-decoration: none;
+    text-align: center;
+    background-color: #BB975D;
+    border: none;
+    color:white;
+    padding: 15px 15px;
+    margin-top: 5px;
+    font-weight: 700;
+    width: 200px;
+}
+.moreButton:hover{
+    color:#255c6d
+}
+
+.ceo{
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+    background-color: #255c6d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ceo h3{
+    width: 75%;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+}
+.ceo p{
+    margin-top: 10px;
+    font-size: large;
+    font-weight: bold;
+    color:#BB975D;
+}

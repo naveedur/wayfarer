@@ -1,0 +1,11 @@
+.nonAdmin{
+    background-color: rgb(28,69,81);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nonAdmin h2{
+    margin: 0 60px;
+    color: white;
+}

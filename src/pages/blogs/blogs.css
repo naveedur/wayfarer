@@ -1,0 +1,46 @@
+.blogsMain{
+  position: relative;
+}
+
+.blogTop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blogBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+
+  .card a{
+    text-decoration: none;
+    color: black;
+  }
+  .leftLine{
+    position: absolute;
+    width: 40px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    
+    background-color: rgb(28,69,81);
+  }
+  .RightLine{
+    position: absolute;
+    width: 40px;
+    top: 0;
+    Right: 0;
+    height: 100%;
+    
+    background-color: rgb(28,69,81);
+  }
+
+  @media (max-width: 900px) {
+    .RightLine, .leftLine {
+      display: none;
+    }
+  }
+  

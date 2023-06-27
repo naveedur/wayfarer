@@ -1,0 +1,18 @@
+.adminInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(28,69,81);
+    color: white;
+    
+}
+.adminInfo a{
+    color: white;
+}
+
+@media (max-width:900px){
+    .adminInfo{
+        display: none;
+    }
+}

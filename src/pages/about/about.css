@@ -1,0 +1,15 @@
+.aboutMain{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px;
+}
+.aboutMain div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.aboutMain div p{
+    font-size: larger;
+    text-align: justify;
+}

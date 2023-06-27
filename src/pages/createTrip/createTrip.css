@@ -1,0 +1,69 @@
+.tripContainer{
+    background-color:  rgb(187,151,93);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    position: relative;
+}
+.tripImage{
+    width: 100%;
+    height:80vh
+}
+.tripHeading{
+    color: #1c4551;
+}
+
+.jodit-workplace{
+    height: 200px !important
+}
+
+.tripButton{
+    background-color: #1C4551;
+    padding: 15px 15px;
+    border: none;
+    color:white
+}
+label{
+    color:#1C4551      
+}
+
+
+.tripAlert {
+    position: absolute;
+    width: 60%;
+    height: 60vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1C4551 ;
+    color: white;
+    z-index: 11;
+    transition: all 0.3s ease;
+
+    
+    
+
+}
+.tripAlert .icon{
+    text-align: end;
+    padding-top: 20px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.tripAlert .text{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.tripAlert .text h2{
+    width: 60%;
+    margin-bottom: 40px;
+}
+.tripAlert .text p{
+    margin-bottom: 100px;
+}

@@ -1,0 +1,77 @@
+.about{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.aboutWrapper{
+    width: 80%;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutLeft{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    margin:30px
+}
+.aboutLeft p{
+    font-weight: bold;
+    font-size: large;
+    text-align: justify;
+}
+/* .left{
+    width:60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} */
+.aboutRight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.aboutRight .box{
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.aboutLeft a{
+    text-decoration: none;
+    background-color: #1C4551;
+    border: none;
+    color:white;
+    padding: 15px 15px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    .aboutWrapper {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width:100%
+    }
+    .aboutRight{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .aboutRight .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top:10px
+    }
+  }

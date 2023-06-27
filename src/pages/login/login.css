@@ -1,0 +1,104 @@
+.account{
+    background-image: url("http://localhost:3000/assets/slider/slider1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;    
+    /* background-color: rgb(15, 15, 44); */
+    width: 100%;
+    height:100vh;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.heading{
+    margin-top: 30px;
+    margin-bottom: 200px;
+    text-align: center;
+    color: rgb(187,151,93);
+}
+.form{
+background-color: rgb(28,69,81);    
+    z-index: 99;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inputField{
+   
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputField input{
+    width: 80%;
+    color: white;
+    padding: 10px 10px;
+    font-size: bold;
+    box-sizing: border-box;
+    font-size: larger;
+    background: none;
+    margin-left: 5px;
+    border: none;
+    /* border-bottom: 4px solid rgb(187,151,93); */
+    outline: auto;
+
+}
+.inputField input::placeholder {
+    color: white !important;
+    font-size: larger;
+    font-weight: bold;
+    padding-top: 40px;
+    
+  }
+  /* .inputField input:hover{
+    border: 2px solid rgb(187,151,93);
+  } */
+  .inputField input:focus{
+        /* border: 4px solid rgb(187,151,93); */
+        border-bottom: none;
+    background: none;
+    opacity: 1;
+  }
+ .inputField button{
+    width: 80%;
+    background-color: rgb(187,151,93);
+    padding: 10px 0;
+    color: white;
+    border:2px solid rgb(187,151,93);
+
+ }
+ .inputField button:hover{
+    
+    background: none;
+ }
+ .forgot{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    font-size: larger;
+    color: rgb(164,88,162);
+ }
+ .forgotPassword{
+    font-size: larger;
+    color: rgb(164,88,162);
+    text-decoration: none;
+    
+    margin-left: 20px;
+ }
+ .createAnAcount{
+     color: white;
+     font-size: 16px;
+     margin-left: 20px;
+ }
+ .loginToAccount{
+    color: white;
+    font-size: 16px;
+    margin-left: 20px;
+ }
