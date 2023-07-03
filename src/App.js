@@ -36,7 +36,7 @@ function App() {
       <Router>
         <Toaster />
         <Routes>
-          <Route exact path="/" element={ <Home /> } />
+          <Route exact path="/" element={user ? <Home /> :<Login/>} />
           <Route exact path="/about-us" element={<About />} />
           <Route exact path="/add-post" element={<BlogPost />} />
           <Route exact path="/register" element={<Register />} />
