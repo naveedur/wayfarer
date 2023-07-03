@@ -24,7 +24,7 @@ const Dashboard = () => {
     }
   }, [trip]);
   const deleteClinkHandler=async(id)=>{
-    const data=await axios.delete(`/api/trip/${id}`)
+    const data=await axios.delete(`https://travel-blond.vercel.app/api/trip/${id}`)
     toast.success("deleted successfuly")
     // setTripList(prevList => prevList.filter(trip => trip._id !== id));
  

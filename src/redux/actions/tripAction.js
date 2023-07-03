@@ -10,7 +10,7 @@ export const createTripAction = (actualData) => async (dispatch) => {
       type: creatTripConstants.TRIP_REQUEST,
     });
     const { data } = await axios.post(
-      "/api/trip/post",
+      "https://travel-blond.vercel.app/api/trip/post",
       actualData
     );
     dispatch({
@@ -32,7 +32,7 @@ export const getTripsAction = (search) => async (dispatch) => {
     dispatch({ 
       type: getTripConstants.TRIP_REQUEST 
     });
-    const { data } = await axios.get(`/api/trip/get-all?search=${search}`);
+    const { data } = await axios.get(`https://travel-blond.vercel.app/api/trip/get-all?search=${search}`);
     dispatch({
        type: getTripConstants.TRIP_SUCCESS,
         payload: data

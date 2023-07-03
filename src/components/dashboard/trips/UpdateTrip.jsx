@@ -25,7 +25,7 @@ const UpdateTrip = () => {
 
   useEffect(() => {
     const fetchTrip = async (tripId) => {
-      const { data } = await axios.get(`/api/trip/${tripId}`);
+      const { data } = await axios.get(`https://travel-blond.vercel.app/api/trip/${tripId}`);
       setTrip(data.data);
     };
     fetchTrip(tripId);
@@ -59,7 +59,7 @@ const UpdateTrip = () => {
   console.log(actualData.get("budget"))
   console.log(actualData.get("headerImage"))
     try {
-      const result = await axios.put(`/api/trip/${tripId}`, actualData, {
+      const result = await axios.put(`https://travel-blond.vercel.app/api/trip/${tripId}`, actualData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -22,7 +22,7 @@ const handleRatingChange = async (event) => {
 useEffect(() => {
   const fetchPost = async (postId) => {
 
-    const {data} = await axios.get(`/api/blog/${postId}`);
+    const {data} = await axios.get(`https://travel-blond.vercel.app/api/blog/${postId}`);
     setPostData(data.data)
     setPostRatings(data.data.ratings)
   };
@@ -37,7 +37,7 @@ useEffect(() => {
   };
   const update = async () => {
     const updated = await axios.put(
-      `/api/blog/rating/${postId}`,data);
+      `https://travel-blond.vercel.app/api/blog/rating/${postId}`,data);
     toast.success("Rating added");
   };
 

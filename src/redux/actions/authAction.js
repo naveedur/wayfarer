@@ -6,7 +6,7 @@ export const loginAction = (actualData) => async (dispatch) => {
     dispatch({
       type: authConstants.USER_REQUEST,
     })
-    const { data } = await axios.post('/api/login', actualData)
+    const { data } = await axios.post('https://travel-blond.vercel.app/api/login', actualData)
     localStorage.setItem("user", JSON.stringify(data));
     dispatch({
       type: authConstants.USER_SUCCESS,

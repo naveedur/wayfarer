@@ -15,7 +15,7 @@ export const MailForm = () => {
       email: data.get('email'),
     };
 
-    axios.post('/api/add-otp', actualData)
+    axios.post('https://travel-blond.vercel.app/api/add-otp', actualData)
     .then(response => {
       if (response.data.status===401) {
         toast.error(response.data.message)

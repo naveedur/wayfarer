@@ -19,10 +19,10 @@ const [tripEnrollment, setTripEnrollment] = useState({});
 useEffect(() => {
   const fetchTrip = async () => {
 
-    const {data} = await axios.get(`/api/trip/${tripId}`);
+    const {data} = await axios.get(`https://travel-blond.vercel.app/api/trip/${tripId}`);
     setTripData(data.data)
 
-    const enrollmentData=await axios.get(`/api/enrollment/get-enrollment/${tripId}`)
+    const enrollmentData=await axios.get(`https://travel-blond.vercel.app/api/enrollment/get-enrollment/${tripId}`)
     if(enrollmentData){
       setTripEnrollment(enrollmentData.data.data)
 

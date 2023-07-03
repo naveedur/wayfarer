@@ -20,7 +20,7 @@ export const PasswordRest = () => {
 
     if (actualData.password === actualData.rePassword) {
       try {
-        const response = await axios.post('/api/reset-password', actualData);
+        const response = await axios.post('https://travel-blond.vercel.app/api/reset-password', actualData);
         const { type, message } = response.data;
         if (type === "error") {
           toast.error(message);

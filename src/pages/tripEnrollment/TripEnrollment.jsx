@@ -16,7 +16,7 @@ const TripEnrollment = () => {
             userId:user.data._id,
             seats:parseInt(totalSeats.current.value),
         }
-      await axios.post(`/api/enrollment/add`,data)
+      await axios.post(`https://travel-blond.vercel.app/api/enrollment/add`,data)
       .then(()=>{toast.success("you have successfuly enrolled")})
       .catch(()=>{toast.error("enrollment fail")})
     }

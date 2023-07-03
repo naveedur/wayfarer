@@ -32,7 +32,7 @@ const Blogs = () => {
     setBlogSearch(e)
   }
  const deleteClinkHandler=async(id)=>{
-   const data=await axios.delete(`/api/blog/${id}`)
+   const data=await axios.delete(`https://travel-blond.vercel.app/api/blog/${id}`)
    toast.success("deleted successfuly")
    setBlogList(prevList => prevList.filter(blog => blog._id !== id));
 

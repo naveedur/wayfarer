@@ -8,7 +8,7 @@ export const createBlogAction = (actualData) => async (dispatch) => {
     dispatch({
       type: createBlogConstants.BLOG_REQUEST,
     })
-    const { data } = await axios.post('/api/blog/add', actualData)
+    const { data } = await axios.post('https://travel-blond.vercel.app/api/blog/add', actualData)
     dispatch({
       type: createBlogConstants.BLOG_SUCCESS,
       payload: data,
@@ -29,7 +29,7 @@ export const getBlogsAction = (search) => async (dispatch) => {
     try {
       dispatch({ type: getBlogConstants.BLOG_REQUEST });
   
-      const { data } = await axios.get(`/api/blog/all?search=${search}`);
+      const { data } = await axios.get(`https://travel-blond.vercel.app/api/blog/all?search=${search}`);
       dispatch({ type: getBlogConstants.BLOG_SUCCESS, payload: data });
     } catch (error) {
       if (error ) {

@@ -8,21 +8,27 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
 import { getTripsAction } from "../../redux/actions/tripAction";
 import Search from "../../components/search/Search";
+import Spinner from "../../components/spinner/Spinner";
 
 const Trip = () => {
-  
+  const [loader, setLoader]=useState(false)
   const [tripList, setTripList] = useState([]);
   const [search, setSearch]=useState("")
-  const { trip } = useSelector((state) => state.getTrips) || {};
+  const { trip,loading } = useSelector((state) => state.getTrips) || {};
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getTripsAction(search));
+
   }, [dispatch,search]);
 
   useEffect(() => {
+    if (loading==true){
+      setLoader(true)
+    }
     if (trip && trip.data) {
+      setLoader(false)
       const filteredTrips = trip.data.filter((tri) => tri.active);
       setTripList(filteredTrips);
     }
@@ -44,9 +50,11 @@ const Trip = () => {
  
   return (
     <Layout title={"trips - Travel"}>
-
     <div className="tripsMain container-fluid ">
+    {loader ? <Spinner/>:
+
       <div className="row tripBox  ">
+
       <div className=" col-md-7 blogTop mt-5">
        
           <Search handleSearch={handleTripSearch}/>
@@ -56,9 +64,10 @@ const Trip = () => {
           </div>
         </div>
        
-         
+
 
           {tripList && tripList.map((tri)=> (
+
              <div key={tri._id} className="col-md-7 mt-3   ">
                  <div  className=" card w-100 p-3 my-2">
                  <Link to={`/trip/${tri._id}`}>
@@ -87,13 +96,16 @@ const Trip = () => {
                     </div>
                     
                     </div>
+                  
               ))}
-          
-        
+            
         </div>
+    }     
+
         <div className="tripLeftLine"></div>
         <div className="tripRightLine"></div>
     </div>
+
     </Layout>
   );
 };
