@@ -61,7 +61,7 @@ const formatDate = (dateString) => {
         </div>
 }
             <div className="image col-12">
-            <img src={tripData.headerImage ? `/${tripData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+            <img src={tripData.headerImage ? `https://travel-blond.vercel.app/${tripData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
             </div>
 
             

@@ -76,7 +76,7 @@ const updateRating=()=>{
           <Rating value={rating} total={postRatings.length} />
             </div>
             <div className="image col-12">
-            <img src={postData.headerImage ? `/${postData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+            <img src={postData.headerImage ? `https://travel-blond.vercel.app/${postData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
             </div>
 
             

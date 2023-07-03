@@ -66,7 +66,7 @@ const Blogs = () => {
             
                  <div className="row">
                    <div className="col-md-4 trip">
-                     <img src={blog.headerImage ? `/${blog.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+                     <img src={blog.headerImage ? `https://travel-blond.vercel.app/${blog.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
                    </div>
                    <div className="col-md-6">
                     

@@ -6,10 +6,10 @@ const Slider = () => {
   const PF="http://localhost:3000/assets/"
   
   const slides = [
-    { url: "http://localhost:3000/assets/slider/slider1.jpg", type:'zoo'},
-    { url: "http://localhost:3000/assets/slider/slider2.jpg", type:'river'},
-    { url: "http://localhost:3000/assets/slider/slider3.jpg", type:'jungle'},
-    { url: "http://localhost:3000/assets/slider/slider4.jpg", type:'jungle'},
+    { url: "assets/slider/slider1.jpg", type:'zoo'},
+    { url: "assets/slider/slider2.jpg", type:'river'},
+    { url: "assets/slider/slider3.jpg", type:'jungle'},
+    { url: "assets/slider/slider4.jpg", type:'jungle'},
   ]
   const [slideIndex, setSlideIndex]=useState(0)
   const goToPrevious=()=>{

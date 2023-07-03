@@ -71,7 +71,7 @@ const Trips = () => {
                    <div key={tri._id} className=" card w-100 p-3 my-5">
                    <div className="row">
                      <div className="col-md-4 trip">
-                     <img src={tri.headerImage ? `/${tri.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+                     <img src={tri.headerImage ? `https://travel-blond.vercel.app/${tri.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
                      </div>
                      <div className="col-md-6 detail order-md-1 order-2">
                          <div className=" ">

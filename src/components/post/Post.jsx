@@ -7,7 +7,7 @@ const Post = ({post}) => {
     <div className='post'>
 
 <div className="postTop">
-        <img className='postImage' src={post.headerImage ? `/${post.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="image not found" />
+        <img className='postImage' src={post.headerImage ? `https://travel-blond.vercel.app/${post.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="image not found" />
         
         <h3 className='blogPostTitle'>{post.title}</h3>
         </div>
