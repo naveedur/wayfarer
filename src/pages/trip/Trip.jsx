@@ -1,6 +1,7 @@
 
 import {useEffect,useState} from "react";
 import "./trip.css";
+import { domain } from "../../domain.js";
 
 import Layout from '../../components/Layout/Layout'
 
@@ -74,7 +75,7 @@ const Trip = () => {
 
                  <div className="row">
                    <div className="col-md-4 trip">
-                   <img src={tri.headerImage ? `http://localhost:5000/${tri.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+                   <img src={tri.headerImage ? `${domain}/${tri.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
                    </div>
                    <div className="col-md-8">
                      <div className="publisher">

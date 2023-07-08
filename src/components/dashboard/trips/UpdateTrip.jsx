@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import JoditEditor from "jodit-react";
 import AdminInfo from "../adminInfo/AdminInfo";
+import { domain } from "../../../domain.js";
 
 
 const UpdateTrip = () => {
@@ -25,7 +26,7 @@ const UpdateTrip = () => {
 
   useEffect(() => {
     const fetchTrip = async (tripId) => {
-      const { data } = await axios.get(`http://localhost:5000/api/trip/${tripId}`);
+      const { data } = await axios.get(`${domain}/api/trip/${tripId}`);
       setTrip(data.data);
     };
     fetchTrip(tripId);
@@ -59,7 +60,7 @@ const UpdateTrip = () => {
   console.log(actualData.get("budget"))
   console.log(actualData.get("headerImage"))
     try {
-      const result = await axios.put(`http://localhost:5000/api/trip/${tripId}`, actualData, {
+      const result = await axios.put(`${domain}/api/trip/${tripId}`, actualData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

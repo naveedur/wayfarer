@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { domain } from "../../domain.js";
 
 export const MailForm = () => {
     const navigate=useNavigate()
@@ -15,7 +16,7 @@ export const MailForm = () => {
       email: data.get('email'),
     };
 
-    axios.post('http://localhost:5000/api/add-otp', actualData)
+    axios.post('${domain}/api/add-otp', actualData)
     .then(response => {
       if (response.data.status===401) {
         toast.error(response.data.message)

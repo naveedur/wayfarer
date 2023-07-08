@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux'
 import { getTripsAction } from "../../redux/actions/tripAction";
 import AdminInfo from '../../components/dashboard/adminInfo/AdminInfo';
+import { domain } from "../../domain";
 
 const Dashboard = () => {
 
@@ -24,7 +25,7 @@ const Dashboard = () => {
     }
   }, [trip]);
   const deleteClinkHandler=async(id)=>{
-    const data=await axios.delete(`http://localhost:5000/api/trip/${id}`)
+    const data=await axios.delete(`${domain}/api/trip/${id}`)
     toast.success("deleted successfuly")
     // setTripList(prevList => prevList.filter(trip => trip._id !== id));
  
@@ -46,7 +47,7 @@ const Dashboard = () => {
   <div key={tri._id} className=" card w-100 p-3 my-5">
   <div className="row">
     <div className="col-md-4 trip">
-    <img src={tri.headerImage ? `http://localhost:5000/${tri.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+    <img src={tri.headerImage ? `${domain}/${tri.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
     </div>
     <div className="col-md-6 detail order-md-1 order-2">
         <div className=" ">

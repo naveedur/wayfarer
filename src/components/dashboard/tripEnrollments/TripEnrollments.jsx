@@ -5,12 +5,13 @@ import AdminInfo from "../adminInfo/AdminInfo";
 import { Accordion } from 'react-bootstrap';
 import './tripEnrollments.css'
 import axios from "axios";
+import { domain } from "../../../domain.js";
 
 const TripEnrollments = () => {
    const [enrollment,setEnrollment]=useState([])
   useEffect(()=>{
     const fetchData=async()=>{
-      const {data}=await axios.get('http://localhost:5000/api/enrollment/get-enrollments')
+      const {data}=await axios.get('${domain}/api/enrollment/get-enrollments')
       setEnrollment(data.data)
     }
     fetchData()

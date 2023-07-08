@@ -1,5 +1,6 @@
 import {useEffect} from 'react'
 import './post.css'
+import { domain } from "../../domain.js";
 
 const Post = ({post}) => {
   
@@ -7,7 +8,7 @@ const Post = ({post}) => {
     <div className='post'>
 
 <div className="postTop">
-        <img className='postImage' src={post.headerImage ? `http://localhost:5000/${post.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="image not found" />
+        <img className='postImage' src={post.headerImage ? `${domain}/${post.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="image not found" />
         
         <h3 className='blogPostTitle'>{post.title}</h3>
         </div>

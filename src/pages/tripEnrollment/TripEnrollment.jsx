@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useSelector } from "react-redux";
 import { toast } from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
+import { domain } from "../../domain.js";
 
 const TripEnrollment = () => {
     const {tripId}=useParams()
@@ -16,7 +17,7 @@ const TripEnrollment = () => {
             userId:user.data._id,
             seats:parseInt(totalSeats.current.value),
         }
-      await axios.post(`http://localhost:5000/api/enrollment/add`,data)
+      await axios.post(`${domain}/api/enrollment/add`,data)
       .then(()=>{toast.success("you have successfuly enrolled")})
       .catch(()=>{toast.error("enrollment fail")})
     }

@@ -2,6 +2,7 @@ import React from 'react';
 import {  useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { domain } from "../../domain.js";
 
 export const PasswordRest = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export const PasswordRest = () => {
 
     if (actualData.password === actualData.rePassword) {
       try {
-        const response = await axios.post('http://localhost:5000/api/reset-password', actualData);
+        const response = await axios.post('${domain}/api/reset-password', actualData);
         const { type, message } = response.data;
         if (type === "error") {
           toast.error(message);

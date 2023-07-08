@@ -3,6 +3,7 @@ import "./blogs.css";
 import axios from "axios";
 import AdminMenu from "../../adminManu/AdminManu";
 import toast from "react-hot-toast";
+import { domain } from "../../domain.js";
 
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
@@ -31,7 +32,7 @@ const Blogs = () => {
     setBlogSearch(e)
   }
  const deleteClinkHandler=async(id)=>{
-   const data=await axios.delete(`http://localhost:5000/api/blog/${id}`)
+   const data=await axios.delete(`${domain}/api/blog/${id}`)
    toast.success("deleted successfuly")
    setBlogList(prevList => prevList.filter(blog => blog._id !== id));
 
@@ -65,7 +66,7 @@ const Blogs = () => {
             
                  <div className="row">
                    <div className="col-md-4 trip">
-                     <img src={blog.headerImage ? `http://localhost:5000/${blog.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+                     <img src={blog.headerImage ? `${domain}/${blog.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
                    </div>
                    <div className="col-md-6">
                     

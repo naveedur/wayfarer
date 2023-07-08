@@ -3,14 +3,14 @@ import {
   creatTripConstants,
   getTripConstants,
 } from "../constants/tripConstants";
-
+import { domain } from "../../domain";
 export const createTripAction = (actualData) => async (dispatch) => {
   try {
     dispatch({
       type: creatTripConstants.TRIP_REQUEST,
     });
     const { data } = await axios.post(
-      "http://localhost:5000/api/trip/post",
+      "${domain}/api/trip/post",
       actualData
     );
     dispatch({
@@ -32,7 +32,7 @@ export const getTripsAction = (search) => async (dispatch) => {
     dispatch({ 
       type: getTripConstants.TRIP_REQUEST 
     });
-    const { data } = await axios.get(`http://localhost:5000/api/trip/get-all?search=${search}`);
+    const { data } = await axios.get(`${domain}/api/trip/get-all?search=${search}`);
     dispatch({
        type: getTripConstants.TRIP_SUCCESS,
         payload: data

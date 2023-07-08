@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './blogsPost.css'
+import { domain } from "../../domain.js";
 
 const BlogsPost = ({blog}) => {
   return (
@@ -9,7 +10,7 @@ const BlogsPost = ({blog}) => {
 
                  <div className="row">
                    <div className="col-md-4 blog ">
-                     <img src={blog.headerImage ? `http://localhost:5000/${blog.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+                     <img src={blog.headerImage ? `${domain}/${blog.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
                    </div>
                    <div className="col-md-8">
                      

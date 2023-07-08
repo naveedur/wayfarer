@@ -7,6 +7,7 @@ import Layout from '../../components/Layout/Layout'
 import { Link } from 'react-router-dom'
 import TripChat from '../../components/tripChat/TripChat'
 import toast  from 'react-hot-toast'
+import { domain } from "../../domain.js";
 
 const TripDetail = () => {
 
@@ -19,10 +20,10 @@ const [tripEnrollment, setTripEnrollment] = useState({});
 useEffect(() => {
   const fetchTrip = async () => {
 
-    const {data} = await axios.get(`http://localhost:5000/api/trip/${tripId}`);
+    const {data} = await axios.get(`${domain}/api/trip/${tripId}`);
     setTripData(data.data)
 
-    const enrollmentData=await axios.get(`http://localhost:5000/api/enrollment/get-enrollment/${tripId}`)
+    const enrollmentData=await axios.get(`${domain}/api/enrollment/get-enrollment/${tripId}`)
     if(enrollmentData){
       setTripEnrollment(enrollmentData.data.data)
 
@@ -61,7 +62,7 @@ const formatDate = (dateString) => {
         </div>
 }
             <div className="image col-12">
-            <img src={tripData.headerImage ? `http://localhost:5000/${tripData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+            <img src={tripData.headerImage ? `${domain}/${tripData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
             </div>
 
             

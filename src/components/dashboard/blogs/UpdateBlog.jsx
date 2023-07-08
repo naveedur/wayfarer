@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 import JoditEditor from "jodit-react";
 import AdminInfo from '../adminInfo/AdminInfo';
+import { domain } from "../../../domain.js";
 
 
 const UpdateBlog = () => {
@@ -15,7 +16,7 @@ const UpdateBlog = () => {
   useEffect(() => {
     const fetchBlog = async (blogId) => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/blog/${blogId}`);
+        const { data } = await axios.get(`${domain}/api/blog/${blogId}`);
         setBlog(data.data);
       } catch (error) {
         toast.error('An error occurred while fetching the blog');
@@ -38,7 +39,7 @@ const UpdateBlog = () => {
     }
 
     try {
-      const result = await axios.put(`http://localhost:5000/api/blog/${blogId}`, actualData, {
+      const result = await axios.put(`${domain}/api/blog/${blogId}`, actualData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import toast from "react-hot-toast";
 import {Link} from 'react-router-dom'
+import { domain } from "../../domain.js";
 
 
 const Register = () => {
@@ -19,7 +20,7 @@ const Register = () => {
             rePassword:data.get("rePassword")
         }
         if(actualData.password===actualData.rePassword){
-            try{const {data}= await axios.post('http://localhost:5000/api/register',actualData)
+            try{const {data}= await axios.post('${domain}/api/register',actualData)
             console.log(data)
             navigate('/login')
             toast.success(`account created for ${actualData.name} `)

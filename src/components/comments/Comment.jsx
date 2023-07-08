@@ -4,6 +4,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import dayjs from 'dayjs';
+import { domain } from "../../domain.js";
+
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
 const Comment = ({ postId, postRating, updateRatings ,totalRatings}) => {
@@ -16,7 +18,7 @@ const Comment = ({ postId, postRating, updateRatings ,totalRatings}) => {
 
   useEffect(() => {
     const fetchComments = async () => {
-      const { data } = await axios.get(`http://localhost:5000/api/blog/comments/${postId}`);
+      const { data } = await axios.get(`${domain}/api/blog/comments/${postId}`);
       setComments(data.data.reverse());
     }
 
@@ -34,7 +36,7 @@ const Comment = ({ postId, postRating, updateRatings ,totalRatings}) => {
         text: newComment,
         post: postId,
       };
-      await axios.post("http://localhost:5000/api/blog/add-comment", comment);
+      await axios.post("${domain}/api/blog/add-comment", comment);
       const updatedComments = [comment,...comments ];
       setComments(updatedComments);
       setNewComment("");

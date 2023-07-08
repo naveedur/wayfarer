@@ -7,6 +7,7 @@ import Layout from '../../components/Layout/Layout'
 import Rating from '../../components/rating/Rating.jsx'
 import Comment from '../../components/comments/Comment'
 import toast from "react-hot-toast";
+import { domain } from "../../domain";
 
 
 const PostDetail = () => {
@@ -22,7 +23,7 @@ const handleRatingChange = async (event) => {
 useEffect(() => {
   const fetchPost = async (postId) => {
 
-    const {data} = await axios.get(`http://localhost:5000/api/blog/${postId}`);
+    const {data} = await axios.get(`${domain}/api/blog/${postId}`);
     setPostData(data.data)
     setPostRatings(data.data.ratings)
   };
@@ -37,7 +38,7 @@ useEffect(() => {
   };
   const update = async () => {
     const updated = await axios.put(
-      `http://localhost:5000/api/blog/rating/${postId}`,data);
+      `${domain}/api/blog/rating/${postId}`,data);
     toast.success("Rating added");
   };
 
@@ -76,7 +77,7 @@ const updateRating=()=>{
           <Rating value={rating} total={postRatings.length} />
             </div>
             <div className="image col-12">
-            <img src={postData.headerImage ? `http://localhost:5000/${postData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+            <img src={postData.headerImage ? `${domain}/${postData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
             </div>
 
             
