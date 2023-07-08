@@ -15,7 +15,7 @@ const TripChat = ({ tripId}) => {
 
   useEffect(() => {
     const fetchComments = async () => {
-      const { data } = await axios.get(`https://travel-blond.vercel.app/api/blog/comments/${tripId}`);
+      const { data } = await axios.get(`http://localhost:5000/api/blog/comments/${tripId}`);
       setComments(data.data.reverse());
     }
 
@@ -32,7 +32,7 @@ const TripChat = ({ tripId}) => {
         text: newComment,
         post: tripId,
       };
-      await axios.post("https://travel-blond.vercel.app/api/blog/add-comment", comment);
+      await axios.post("http://localhost:5000/api/blog/add-comment", comment);
       const updatedComments = [comment,...comments];
       setComments(updatedComments);
       setNewComment("");

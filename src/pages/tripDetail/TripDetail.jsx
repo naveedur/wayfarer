@@ -19,10 +19,10 @@ const [tripEnrollment, setTripEnrollment] = useState({});
 useEffect(() => {
   const fetchTrip = async () => {
 
-    const {data} = await axios.get(`https://travel-blond.vercel.app/api/trip/${tripId}`);
+    const {data} = await axios.get(`http://localhost:5000/api/trip/${tripId}`);
     setTripData(data.data)
 
-    const enrollmentData=await axios.get(`https://travel-blond.vercel.app/api/enrollment/get-enrollment/${tripId}`)
+    const enrollmentData=await axios.get(`http://localhost:5000/api/enrollment/get-enrollment/${tripId}`)
     if(enrollmentData){
       setTripEnrollment(enrollmentData.data.data)
 
@@ -61,7 +61,7 @@ const formatDate = (dateString) => {
         </div>
 }
             <div className="image col-12">
-            <img src={tripData.headerImage ? `https://travel-blond.vercel.app/${tripData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+            <img src={tripData.headerImage ? `http://localhost:5000/${tripData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
             </div>
 
             

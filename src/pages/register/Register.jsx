@@ -19,7 +19,7 @@ const Register = () => {
             rePassword:data.get("rePassword")
         }
         if(actualData.password===actualData.rePassword){
-            try{const {data}= await axios.post('https://travel-blond.vercel.app/api/register',actualData)
+            try{const {data}= await axios.post('http://localhost:5000/api/register',actualData)
             console.log(data)
             navigate('/login')
             toast.success(`account created for ${actualData.name} `)

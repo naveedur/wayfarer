@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createTripAction } from "../../redux/actions/tripAction";
 import { getTripsAction } from "../../redux/actions/tripAction";
 import {  useNavigate } from "react-router-dom";
+import Layout from '../../components/Layout/Layout'
 
 import toast from "react-hot-toast";
 import JoditEditor from "jodit-react";
@@ -57,7 +58,7 @@ const CreateTrip = () => {
 };
 
   return (
-    // <div className="tripContainer">
+    <Layout title={"Add Trip - Travel"}>
       <div className="row  tripContainer">
        
         <div className="col-md-6 col-10 mt-5">
@@ -100,8 +101,8 @@ const CreateTrip = () => {
         </div>
 }
       </div>
-    // </div>
-  );
+    </Layout> 
+ );
 };
 
 export default CreateTrip;

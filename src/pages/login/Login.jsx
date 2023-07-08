@@ -31,7 +31,7 @@ export const Login = () => {
     } else if (user.error) {
       toast.error(user.error);
     }
-  }, [user.user, user.error, navigate]);
+  }, [user.user, user.error]);
 
   return (
     <div className="account row">

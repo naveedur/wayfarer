@@ -9,7 +9,7 @@ const BlogsPost = ({blog}) => {
 
                  <div className="row">
                    <div className="col-md-4 blog ">
-                     <img src={blog.headerImage ? `https://travel-blond.vercel.app/${blog.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+                     <img src={blog.headerImage ? `http://localhost:5000/${blog.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
                    </div>
                    <div className="col-md-8">
                      

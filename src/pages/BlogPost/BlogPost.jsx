@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getTripsAction } from "../../redux/actions/tripAction";
 import { createBlogAction } from "../../redux/actions/blogAction";
 import { getBlogsAction } from "../../redux/actions/blogAction";
+import Layout from '../../components/Layout/Layout'
+
 
 import toast from "react-hot-toast";
 
@@ -46,8 +48,11 @@ const BlogPost = () => {
     }
   
     return (
+      <Layout title={"add blog post - Travel"}>
+
       <div className="postwrapper row">
 <div className="col-md-6 col-11 ">
+<h3 className="tripHeading">Add New Post</h3>
         <form method="post" onSubmit={handleSubmit} className='postForm'>
         <div className="form-group">
               <label>Title</label>
@@ -104,6 +109,7 @@ const BlogPost = () => {
           <div className="form-group"><button className='postSubmit' type='submit' >POST</button></div>
         </form>
       </div></div>
+      </Layout>
     );
   };
 

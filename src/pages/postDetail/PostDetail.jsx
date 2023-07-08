@@ -22,7 +22,7 @@ const handleRatingChange = async (event) => {
 useEffect(() => {
   const fetchPost = async (postId) => {
 
-    const {data} = await axios.get(`https://travel-blond.vercel.app/api/blog/${postId}`);
+    const {data} = await axios.get(`http://localhost:5000/api/blog/${postId}`);
     setPostData(data.data)
     setPostRatings(data.data.ratings)
   };
@@ -37,7 +37,7 @@ useEffect(() => {
   };
   const update = async () => {
     const updated = await axios.put(
-      `https://travel-blond.vercel.app/api/blog/rating/${postId}`,data);
+      `http://localhost:5000/api/blog/rating/${postId}`,data);
     toast.success("Rating added");
   };
 
@@ -76,7 +76,7 @@ const updateRating=()=>{
           <Rating value={rating} total={postRatings.length} />
             </div>
             <div className="image col-12">
-            <img src={postData.headerImage ? `https://travel-blond.vercel.app/${postData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+            <img src={postData.headerImage ? `http://localhost:5000/${postData.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
             </div>
 
             

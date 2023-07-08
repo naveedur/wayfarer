@@ -1,6 +1,5 @@
 .tripContainer{
     background-color:  rgb(187,151,93);
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +33,7 @@ label{
     position: absolute;
     width: 60%;
     height: 60vh;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #1C4551 ;
@@ -66,4 +65,21 @@ label{
 }
 .tripAlert .text p{
     margin-bottom: 100px;
+}
+
+@media (max-width: 900px) {
+  .tripAlert{
+    width: 85%;
+    height: 40vh;
+  }
+  .tripAlert .text h2{
+    width: 80%;
+    margin-bottom: 40px;
+}
+.tripAlert .text p{
+    margin-left: 40px;
+}
+.tripContainer{
+}
+
 }

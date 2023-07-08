@@ -30,7 +30,7 @@
     /* font-weight: bold; */
     font-size:large;
     margin-bottom: 10px;
-    text-align: center;
+    text-align: justify;
 }
 .mail, .number{
     color: white;
@@ -55,3 +55,9 @@
     }
 
 
+    @media (max-width: 900px) {
+        .footerImage, .footerCenter, .footerRight{
+            margin-bottom: 30px;
+        }
+        
+    }

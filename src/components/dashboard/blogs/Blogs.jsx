@@ -12,7 +12,6 @@ import AdminInfo from "../adminInfo/AdminInfo";
 const Blogs = () => {
   const [blogSearch, setBlogSearch]=useState("")
 
-
   const dispatch=useDispatch()
   useEffect(() => {
     dispatch(getBlogsAction(blogSearch));
@@ -32,7 +31,7 @@ const Blogs = () => {
     setBlogSearch(e)
   }
  const deleteClinkHandler=async(id)=>{
-   const data=await axios.delete(`https://travel-blond.vercel.app/api/blog/${id}`)
+   const data=await axios.delete(`http://localhost:5000/api/blog/${id}`)
    toast.success("deleted successfuly")
    setBlogList(prevList => prevList.filter(blog => blog._id !== id));
 
@@ -66,7 +65,7 @@ const Blogs = () => {
             
                  <div className="row">
                    <div className="col-md-4 trip">
-                     <img src={blog.headerImage ? `https://travel-blond.vercel.app/${blog.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
+                     <img src={blog.headerImage ? `http://localhost:5000/${blog.headerImage.replace('\\', '/')}` : "http://localhost:3000/assets/slider/slider1.jpg"} alt="" />
                    </div>
                    <div className="col-md-6">
                     

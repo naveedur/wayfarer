@@ -15,7 +15,7 @@ const UpdateBlog = () => {
   useEffect(() => {
     const fetchBlog = async (blogId) => {
       try {
-        const { data } = await axios.get(`https://travel-blond.vercel.app/api/blog/${blogId}`);
+        const { data } = await axios.get(`http://localhost:5000/api/blog/${blogId}`);
         setBlog(data.data);
       } catch (error) {
         toast.error('An error occurred while fetching the blog');
@@ -38,7 +38,7 @@ const UpdateBlog = () => {
     }
 
     try {
-      const result = await axios.put(`https://travel-blond.vercel.app/api/blog/${blogId}`, actualData, {
+      const result = await axios.put(`http://localhost:5000/api/blog/${blogId}`, actualData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

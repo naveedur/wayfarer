@@ -12,16 +12,14 @@ const Subscribe = () => {
         </div>
         <div className="col-12 col-md-5 rightside">
             <h5>
-                Don't miss out on the adventure subscribe now
+                Don't miss out on the adventure 
             </h5>
-            <p>join our community! we will take you on a journey to some of
-                the most breathtaking destinations and share captivating stories
-                 about many unique places.
+            <p>Join our network of passionate travelers and start incredible journeys together.
             </p>
-            <form action="">
+            {/* <form action="">
                 <input id='email' type="email"  placeholder='Enter your Email'/>
                 <input id='button' type="submit" value="Submit" />
-            </form>
+            </form> */}
         </div>
     </div>
 </div>
