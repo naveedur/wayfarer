@@ -1,13 +1,13 @@
 import { getBlogConstants,createBlogConstants } from "../constants/blogConstant";
 
 
-const initialState = {
+const initialCreateBlogState = {
     blogs: [],
     loading: false,
     error: null,
   };
   
-  export const createBlogReducer = (state = initialState, { type, payload }) => {
+  export const createBlogReducer = (state = initialCreateBlogState, { type, payload }) => {
     switch (type) {
       case createBlogConstants.BLOG_REQUEST:
         return {
@@ -35,7 +35,13 @@ const initialState = {
   };
 
 
-export const getBlogReducer=(state=initialState,{type,payload})=>{
+
+  const initialGetBlogsState = {
+    blogs: [],
+    loading: false,
+    error: null,
+  };
+export const getBlogReducer=(state=initialGetBlogsState,{type,payload})=>{
     switch(type){
         case getBlogConstants.BLOG_REQUEST:
             return{

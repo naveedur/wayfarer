@@ -33,7 +33,6 @@ useEffect(() => {
   };
   fetchTrip(); 
 }, [tripId]); 
-// console.log(tripEnrollment.totalSeatsBooked);
 
 
 const formatDate = (dateString) => {

@@ -32,8 +32,7 @@ const CreateTrip = () => {
 
   
   };
-  const trip = useSelector((state) => state.newTrip);
-  console.log(trip.trip)
+  // const trip = useSelector((state) => state.newTrip);
   
   const editorConfig = {
     cleanHTML: true,
@@ -142,7 +141,7 @@ const CreateTrip = () => {
                   type="checkbox"
                   className="form-check-input"
                   name="active"
-                  checked={trip.active}
+                  // checked={trip.active}
                 />
               </div>
             <button type="submit" className=" formButton">

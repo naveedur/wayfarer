@@ -1,6 +1,7 @@
 import {useEffect} from 'react'
 import './post.css'
-import { domain } from "../../domain.js";
+// import { domain } from "../../domain.js";
+let domain="http://localhost:5000"
 
 const Post = ({post}) => {
   

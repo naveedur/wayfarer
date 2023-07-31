@@ -8,7 +8,7 @@ export const createBlogAction = (actualData) => async (dispatch) => {
     dispatch({
       type: createBlogConstants.BLOG_REQUEST,
     })
-    const { data } = await axios.post('${domain}/api/blog/add', actualData)
+    const { data } = await axios.post(`${domain}/api/blog/add`, actualData)
     dispatch({
       type: createBlogConstants.BLOG_SUCCESS,
       payload: data,

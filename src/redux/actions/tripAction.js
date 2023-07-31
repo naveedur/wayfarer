@@ -5,14 +5,16 @@ import {
 } from "../constants/tripConstants";
 import { domain } from "../../domain";
 export const createTripAction = (actualData) => async (dispatch) => {
+  console.log(actualData)
   try {
     dispatch({
       type: creatTripConstants.TRIP_REQUEST,
     });
     const { data } = await axios.post(
-      "${domain}/api/trip/post",
+      `${domain}/api/trip/post`,
       actualData
     );
+    console.log(data)
     dispatch({
       type: creatTripConstants.TRIP_SUCCESS,
       payload: data,

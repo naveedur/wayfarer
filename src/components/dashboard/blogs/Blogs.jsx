@@ -3,7 +3,7 @@ import "./blogs.css";
 import axios from "axios";
 import AdminMenu from "../../adminManu/AdminManu";
 import toast from "react-hot-toast";
-import { domain } from "../../domain.js";
+import { domain } from "../../../domain.js";
 
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'

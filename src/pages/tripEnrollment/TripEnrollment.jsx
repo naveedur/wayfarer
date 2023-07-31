@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRef } from 'react';
+import { useRef ,useEffect,useState} from 'react';
 import './tripEnrollment.css'
 import axios from 'axios';
 import { useSelector } from "react-redux";
@@ -10,16 +10,45 @@ import { domain } from "../../domain.js";
 const TripEnrollment = () => {
     const {tripId}=useParams()
     const { user } = useSelector((state) => state.loginUser) || {};
+    const [tripEnrollment, setTripEnrollment] = useState({});
+    const [tripData, setTripData] = useState({});
+
+
     const totalSeats=useRef()
+
+    useEffect(() => {
+      const fetchTrip = async () => {
+    
+        const {data} = await axios.get(`${domain}/api/trip/${tripId}`);
+        setTripData(data.data)
+    
+        const enrollmentData=await axios.get(`${domain}/api/enrollment/get-enrollment/${tripId}`)
+        if(enrollmentData){
+          setTripEnrollment(enrollmentData.data.data)
+        }
+      };
+      fetchTrip(); 
+    }, [tripId]); 
     const handleEnrollment=async()=>{
         const data={
             tripId:tripId,
             userId:user.data._id,
             seats:parseInt(totalSeats.current.value),
         }
-      await axios.post(`${domain}/api/enrollment/add`,data)
-      .then(()=>{toast.success("you have successfuly enrolled")})
-      .catch(()=>{toast.error("enrollment fail")})
+        if ((tripData.totalSeats - (tripEnrollment?.totalSeatsBooked ?? 0)) >= parseInt(totalSeats.current.value)) {
+          if(parseInt(totalSeats.current.value)>5){
+            toast.error("For booking more then 5 seats. You may need to visit office. ")
+
+          }else{
+            await axios.post(`${domain}/api/enrollment/add`,data)
+            .then(()=>{toast.success("you have successfuly enrolled")})
+            .catch((error)=>{toast.error(error.message)})
+          }
+          
+        }else{
+          toast.error(`only ${tripData.totalSeats-(tripEnrollment?.totalSeatsBooked ?? 0)} remaining for this trip`)
+        }
+      
     }
   return (
     <div className='container-fluid main'>

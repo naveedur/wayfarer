@@ -11,13 +11,13 @@ const TripEnrollments = () => {
    const [enrollment,setEnrollment]=useState([])
   useEffect(()=>{
     const fetchData=async()=>{
-      const {data}=await axios.get('${domain}/api/enrollment/get-enrollments')
+      const {data}=await axios.get(`${domain}/api/enrollment/get-enrollments`)
       setEnrollment(data.data)
     }
     fetchData()
   },[])
-  console.log(enrollment[0]?.trip?.budget);
-  console.log(enrollment[0]?.enrolledUsers[0]?.user?.name);
+  console.log(enrollment[0])
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -31,7 +31,7 @@ const TripEnrollments = () => {
               {enrollment && enrollment.map((enroll,index)=>(
                 <Accordion.Item eventKey={index} className="mb-3">
                 <Accordion.Header className="enrollHeader">
-                  <h4>{enroll.trip.destination}</h4>
+                  <h4>{enroll.trip?.destination}</h4>
                   <div className="totalSeats">
                     <h4>Total Seats Booked</h4>
                     <h5>{enroll.totalSeatsBooked}</h5>
@@ -45,7 +45,7 @@ const TripEnrollments = () => {
                   <div className="col-md-6 col-11  ">
                      <div className="enrollLeft">
                       <h4> Name:</h4>                      
-                      <h5 className="mx-3"> {users.user.name}</h5>
+                      <h5 className="mx-3"> {users?.user?.name}</h5>
                       <h4>Seats Booked:</h4>
                       <h5>( {users.seatsBooked})</h5>
                        </div>

@@ -1,12 +1,12 @@
-import { creatTripConstants ,getTripConstants } from '../constants/tripConstants'
+import { creatTripConstants, getTripConstants } from '../constants/tripConstants';
 
-const initialState = {
+const initialCreateTripState = {
   trip: [],
   loading: false,
   error: null,
 };
 
-export const createTripReducer = (state = initialState, { type, payload }) => {
+export const createTripReducer = (state = initialCreateTripState, { type, payload }) => {
   switch (type) {
     case creatTripConstants.TRIP_REQUEST:
       return {
@@ -33,30 +33,35 @@ export const createTripReducer = (state = initialState, { type, payload }) => {
   }
 };
 
+const initialGetTripsState = {
+  trip: [],
+  loading: false,
+  error: null,
+};
 
-export const getTripsReducer = (state = initialState, { type, payload }) => {
-    switch (type) {
-      case getTripConstants.TRIP_REQUEST:
-        return {
-          ...state,
-          loading: true,
-        };
-  
-      case getTripConstants.TRIP_SUCCESS:
-        return {
-          ...state,
-          trip: payload,
-          loading: false,
-        };
-  
-      case getTripConstants.TRIP_ERROR:
-        return {
-          ...state,
-          loading: false,
-          error: payload,
-        };
-  
-      default:
-        return state;
-    }
-  };
+export const getTripsReducer = (state = initialGetTripsState, { type, payload }) => {
+  switch (type) {
+    case getTripConstants.TRIP_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+
+    case getTripConstants.TRIP_SUCCESS:
+      return {
+        ...state,
+        trip: payload,
+        loading: false,
+      };
+
+    case getTripConstants.TRIP_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: payload,
+      };
+
+    default:
+      return state;
+  }
+};

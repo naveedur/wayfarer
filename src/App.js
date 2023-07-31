@@ -4,10 +4,9 @@ import { Login } from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import About from "./pages/about/About";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes ,Navigate} from "react-router-dom";
 import Blog from "./pages/blogs/Blogs";
 import { useSelector, shallowEqual } from "react-redux";
-import BlogPost from "./pages/BlogPost/BlogPost";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Users from "./components/dashboard/users/Users";
 import Trips from "./components/dashboard/trips/Trips";
@@ -21,24 +20,28 @@ import Trip from "./pages/trip/Trip";
 import PostDetail from "./pages/postDetail/PostDetail";
 import TripDetail from "./pages/tripDetail/TripDetail";
 import TripEnrollment from "./pages/tripEnrollment/TripEnrollment";
-import AddTrip from "./pages/createTrip/CreateTrip";
+import AddTrip from "./components/userProfile/trips/createTrip/CreateTrip";
 import { MailForm } from "./pages/resetPassword/MailForm";
 import { PasswordRest } from "./pages/resetPassword/PasswordRest";
 import TripEnrollments from "./components/dashboard/tripEnrollments/TripEnrollments";
 import NonAdmin from "./components/nonAdminUser/NonAdmin";
+import UserProfile from "./pages/userProfile/UserProfile";
+import UseTrips from "./components/userProfile/trips/UserTrips";
+import UserBlogs from "./components/userProfile/blogs/UserBlogs";
+import AddPost from "./components/userProfile/blogs/addPost/AddPost";
+import UpdateUserBlog from "./components/userProfile/blogs/UpdateBlog";
 
 function App() {
   const { user } = useSelector((state) => state.loginUser, shallowEqual) || {};
-  console.log(user);
-
+  
   return (
+    
     <div className="App" >
       <Router>
         <Toaster />
         <Routes>
-          <Route exact path="/" element={<Home /> } />
+          <Route exact path="/" element={ user ?<Home /> : <Navigate to="/login" /> } />
           <Route exact path="/about-us" element={<About />} />
-          <Route exact path="/add-post" element={<BlogPost />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/mail-verification" element={<MailForm />} />
@@ -58,16 +61,21 @@ function App() {
           ) : (
             <Route path="/dashboard/*" element={<NonAdmin />} />
           )}
+          <Route exact path="/user-profile/" >
+              <Route exact path="" element={<UserProfile />} />
+              <Route exact path="trips" element={<UseTrips />} />
+              <Route exact path="create-trip" element={<AddTrip />} />
+              <Route exact path="blogs" element={<UserBlogs />} />
+              <Route exact path="create-post" element={<AddPost />} />
+              <Route exact path="update-post/:blogId" element={<UpdateUserBlog />} />
+          </Route>
           <Route exact path="/trips" element={<Trip />} />
           <Route exact path="/trip/:tripId" element={<TripDetail />} />
-          <Route exact path="/create-trip" element={<AddTrip />} />
-          <Route
-            exact
-            path="/trip-enrollment/:tripId"
-            element={<TripEnrollment />}
+          <Route exact path="/trip-enrollment/:tripId"element={<TripEnrollment />}
           />
           <Route exact path="/post/:postId" element={<PostDetail />} />
           <Route exact path="/blogs" element={<Blog />} />
+         
         </Routes>
       </Router>
     </div>

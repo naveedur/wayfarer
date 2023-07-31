@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import "./createTrip.css";
 import { useDispatch, useSelector } from "react-redux";
-import { createTripAction } from "../../redux/actions/tripAction";
-import { getTripsAction } from "../../redux/actions/tripAction";
+import { createTripAction } from "../../../../redux/actions/tripAction";
+import { getTripsAction } from "../../../../redux/actions/tripAction";
 import {  useNavigate } from "react-router-dom";
-import Layout from '../../components/Layout/Layout'
-
+import UserLayout from "../../../../pages/userProfile/userLayout/UserLayout";
 import toast from "react-hot-toast";
 import JoditEditor from "jodit-react";
 import { ImCross } from "react-icons/im";
@@ -58,10 +57,8 @@ const CreateTrip = () => {
 };
 
   return (
-    <Layout title={"Add Trip - Travel"}>
-      <div className="row  tripContainer">
-       
-        <div className="col-md-6 col-10 mt-5">
+       <UserLayout>
+        <div className="col-md-8 col-10 my-5" style={{margin:"auto"}}>
           <div className="form-box">
             <h3 className="tripHeading">Add New Trip</h3>
             <form onSubmit={handleSubmit} method="post" encType="multipart/form-data">
@@ -88,7 +85,7 @@ const CreateTrip = () => {
             </form>
           </div>
         </div>
-{tripAlert && 
+{/* {tripAlert && 
         <div className="tripAlert">
         <div className="icon" onClick={()=>setTripAlert(!tripAlert)}><ImCross size={40}  style={{ color: 'white' }}/></div>
         <div className="text">
@@ -99,9 +96,8 @@ const CreateTrip = () => {
         </div>
           
         </div>
-}
-      </div>
-    </Layout> 
+} */}
+</UserLayout> 
  );
 };
 
