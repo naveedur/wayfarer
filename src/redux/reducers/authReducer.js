@@ -1,7 +1,7 @@
 import { authConstants } from "../constants/authConstansts";
 
 const initialState = {
-  user: JSON.parse(localStorage.getItem("user")) || null,
+  user: JSON.parse(localStorage.getItem("travelUser")) || null,
   loading: false,
   error: null,
 };
@@ -15,7 +15,7 @@ export const loginReducer = (state = initialState, { type, payload }) => {
       };
 
     case authConstants.USER_SUCCESS:
-      localStorage.setItem("user", JSON.stringify(payload));
+      localStorage.setItem("travelUser", JSON.stringify(payload));
       return {
         ...state,
         user: payload,
@@ -27,6 +27,13 @@ export const loginReducer = (state = initialState, { type, payload }) => {
         ...state,
         loading: false,
         error: payload,
+      };
+      case authConstants.USER_LOGOUT:
+      localStorage.removeItem("travelUser");
+      return {
+        ...state,
+        user: null,
+        error: null,
       };
 
     default:

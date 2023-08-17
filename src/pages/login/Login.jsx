@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,6 +8,8 @@ import toast from 'react-hot-toast';
 export const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const { user, error } = useSelector((state) => state.loginUser);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,16 +24,14 @@ export const Login = () => {
     dispatch(loginAction(actualData));
   };
 
-  const user = useSelector((state) => state.loginUser);
-  
   useEffect(() => {
-    if (user.user) {
-      toast.success('Login successful');
+    if (user) {
       navigate('/');
-    } else if (user.error) {
-      toast.error(user.error);
+      toast.success('Login successful');
+    } else if (error) {
+      toast.error(error);
     }
-  }, [user.user, user.error]);
+  }, [user, error, navigate]);
 
   return (
     <div className="account row">
@@ -39,11 +39,9 @@ export const Login = () => {
         <h3 className="heading">Login to your account</h3>
         <form method="post" onSubmit={handleSubmit}>
           <div className="inputField">
-          
             <input required type="email" name="email" id="email" placeholder="EMAIL" />
           </div>
           <div className="inputField">
-          
             <input required type="password" name="password" id="password" placeholder="PASSWORD" />
           </div>
 

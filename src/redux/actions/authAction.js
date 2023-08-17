@@ -3,18 +3,19 @@ import { authConstants } from '../constants/authConstansts'
 import { domain } from "../../domain";
 
 export const loginAction = (actualData) => async (dispatch) => {
-  console.log(actualData)
   try {
     dispatch({
       type: authConstants.USER_REQUEST,
     })
+
     const { data } = await axios.post(`${domain}/api/login`, actualData)
-    localStorage.setItem("user", JSON.stringify(data));
+    localStorage.setItem("travelUser", JSON.stringify(data));
     dispatch({
       type: authConstants.USER_SUCCESS,
       payload: data,
     })
   } catch (error) {
+
     if (error.response && error.response.status === 400) {
       dispatch({
         type: authConstants.USER_ERROR,
@@ -36,3 +37,6 @@ export const loginAction = (actualData) => async (dispatch) => {
     }
   }
 }
+export const logoutAction = () => ({
+  type: authConstants.USER_LOGOUT,
+});

@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
 import JoditEditor from "jodit-react";
 import { domain } from "../../../domain.js";
+
 import { useDispatch, useSelector } from "react-redux";
 import UserLayout from '../../../pages/userProfile/userLayout/UserLayout';
 
@@ -13,7 +14,6 @@ const UpdateBlog = () => {
   const { blogId } = useParams();
   const [blog, setBlog] = useState({});
   const [tripList, setTripList] = useState([]);
-
   const { trip } = useSelector((state) => state.getTrips) || {};
   useEffect(() => {
     if (trip && trip.data) {
@@ -37,7 +37,7 @@ const UpdateBlog = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const actualData = new FormData(e.currentTarget);
+    const actualData = new FormData();
 
     actualData.append('title', blog.title);
     actualData.append('content', blog.content);
@@ -46,13 +46,12 @@ const UpdateBlog = () => {
       actualData.append('headerImage', blog.headerImage);
     }
 
+ 
     try {
       const result = await axios.put(`${domain}/api/blog/${blogId}`, actualData, {
         headers: {
           'Content-Type': 'multipart/form-data',
-        }
-        .catch((error)=>console.log(error.message))
-        
+        },
       });
 
       if (result.status === 200) {
@@ -77,7 +76,7 @@ const UpdateBlog = () => {
             <h3>Update Blog</h3>
 
             <form onSubmit={handleSubmit}>
-              <div className="form-group">
+            <div className="form-group">
                 <label>Title</label>
                 <input
                   type="text"
@@ -88,7 +87,7 @@ const UpdateBlog = () => {
                   required
                 />
               </div>
-              <div className="form-group">
+              {/* <div className="form-group">
               <label>Writer Name</label>
               <input
                 type="text"
@@ -99,15 +98,15 @@ const UpdateBlog = () => {
              
                 required
               />
-            </div>
-            <div className="form-group">
+            </div> */}
+            {/* <div className="form-group">
               <label>Trip</label>
               <select type="text" className="form-select" defaultValue={blog.trip} name="trip" id="trip" placeholder='where you visited'>
                 {tripList && tripList.map((tri, index) => (
                     <option key={index}>{tri.destination}</option>
                 ))}
               </select>
-            </div>
+            </div> */}
               <div className="form-group">
                 <label>Header Image</label>
                 <input type="file" className="form-control" name="headerImage" onChange={handleImageChange} />

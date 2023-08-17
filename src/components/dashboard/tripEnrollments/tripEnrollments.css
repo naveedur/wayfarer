@@ -26,3 +26,24 @@
     justify-content: center;
     background-color:rgb(28,69,81) ;
 }
+
+.addUser{
+    
+    background-color:rgb(28,69,81) ;
+    padding: 10px 8px;
+
+
+}
+.addUser a{
+    text-decoration: none;
+    color:white;
+   
+}
+
+
+@media (max-width: 900px) {
+    .totalSeats{
+        display: flex;
+        flex-direction: column;
+    }
+}

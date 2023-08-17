@@ -7,7 +7,8 @@ import { Provider } from "react-redux"
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const user = JSON.parse(localStorage.getItem("user"));
+const user = JSON.parse(localStorage.getItem("travelUser"));
+console.log(user)
 root.render(
   <React.StrictMode>
     <Provider store={store}>

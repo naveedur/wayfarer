@@ -3,7 +3,7 @@ import Home from "./pages/homePage/Home";
 import { Login } from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import About from "./pages/about/About";
-
+import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes ,Navigate} from "react-router-dom";
 import Blog from "./pages/blogs/Blogs";
 import { useSelector, shallowEqual } from "react-redux";
@@ -33,6 +33,11 @@ import UpdateUserBlog from "./components/userProfile/blogs/UpdateBlog";
 
 function App() {
   const { user } = useSelector((state) => state.loginUser, shallowEqual) || {};
+  // const user = JSON.parse(localStorage.getItem("travelUser"));
+
+  useEffect(() => {
+    console.log("User state:", user); // Debugging log
+  }, [user]);
   
   return (
     
@@ -40,7 +45,7 @@ function App() {
       <Router>
         <Toaster />
         <Routes>
-          <Route exact path="/" element={ user ?<Home /> : <Navigate to="/login" /> } />
+          <Route exact path="/" element={ user!=null ?<Home /> : <Navigate to="/login" /> } />
           <Route exact path="/about-us" element={<About />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<Login />} />

@@ -64,17 +64,7 @@ const AddPost = () => {
               />
             </div>
 
-            <div className="form-group">
-              <label>Writer Name</label>
-              <input
-                type="text"
-                className="form-control"
-                name="writer"
-                value={user.data.name}
-             
-                required
-              />
-            </div>
+            
 
             <div className="form-group">
               <label>Trip</label>
