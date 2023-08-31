@@ -12,17 +12,6 @@ import { domain } from "../../../domain.js";
 const UpdateTrip = () => {
   const { tripId } = useParams();
   const [trip , setTrip]=useState({})
-  // const [trip, setTrip] = useState({
-  //   destination: "",
-  //   startDate: "",
-  //   endDate: "",
-  //   accommodation: "",
-  //   transportation: "",
-  //   budget: 0,
-  //   totalSeats:0,
-  //   notes: "",
-  //   active: false
-  // });
 
   useEffect(() => {
     const fetchTrip = async (tripId) => {
